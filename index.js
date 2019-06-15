@@ -2,7 +2,7 @@
 // Imports dependencies and set up http server
 const
     express = require('express'),
-      = require('body-parser'),
+    bodyParser = require('body-parser'),
     app = express().use(bodyParser.json()); // creates express http server
 
 // Sets server port and logs message on success
@@ -12,17 +12,17 @@ const request = require('request');
 
 var admin = require("firebase-admin");
 
-var serviceAccount = require("./basket-bot1-firebase-adminsdk-oxpjh-666025a607.json");
+var serviceAccount = require("./medo-01-firebase-adminsdk-llu9c-4fa4f9c916.json");
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://basket-bot1.firebaseio.com"
+    databaseURL: "https://medo-01.firebaseio.com"
 });
 
 
 
 let VERIFY_TOKEN = process.env.VERIFY_TOKEN;
-//let PAGE_ACCESS_TOKEN  ='EAAJM4NcgsGEBAEcTPiZCbYUZBtPfLhZB1Yn8r4OcVDdArvT5P62awlZAG0mGQZC53cv61aXWfEmeXaycmRDpwohxtKblEjG8TZAKZAZARyIQyQv4v990MCoO2c26ofH9a7JfHhRHdgrvebGnzyF1xIZBmqSL0GReUVbZAp4qJee5SKQGRHU50yZBEX7YwA8dEhSXGgZD';
+//let PAGE_ACCESS_TOKEN  ='EAAFQqjlad0ABALNIZCOcT9qZBoQ8LMJNMPUq8algFFtMcZAmRbgq6PB1KCUWqvNvABGZBUPDJxqTFfTZCBZCmeV5hxRV4htozoJBUZCVtIdizZCqu0ujwOVS94JoUcXcXppHTZBP98REOYETIOWz6QIvth9VFR7horNJAUjhKCZChZA5QZDZD';
 let PAGE_ACCESS_TOKEN   = process.env.PAGE_ACCESS_TOKEN;
 
 
